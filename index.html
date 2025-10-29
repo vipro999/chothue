@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=apple-mobile-web-app-capable content=yes>
+<meta name=apple-mobile-web-app-status-bar-style content=black-translucent>
+<meta name=apple-mobile-web-app-title content="Get Coins">
+<link rel=apple-touch-icon href=icon-192.png>
+<link rel=manifest href=manifest.json>
+<title>Collect Rewards</title>
+<style>*{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;padding:0}body{background:#fff;color:#111;display:flex;flex-direction:column;align-items:center;padding:8px;max-width:480px;margin:0 auto}header{width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;padding-top:env(safe-area-inset-top)}header img{height:32px}header h1{font-size:1.3rem;font-weight:700;text-align:center;position:absolute;left:50%;transform:translateX(-50%)}.stats{width:100%;background:#f9f9f9;padding:12px;border-radius:10px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.04)}.stats div{font-weight:700}.input-section{width:100%;margin-bottom:12px}.input-section input{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem}.coins-grid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:2px 0}.coin-card{border:1px solid #e6e6e9;border-radius:10px;padding:12px;text-align:center;cursor:pointer;background:#fff;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:8px}.coin-card:active{transform:scale(.98)}.coin-card.active{border:2px solid #ff0050;background:linear-gradient(180deg,#fff7fb,#fff)}.coin-top{display:flex;align-items:center;gap:8px;font-weight:600}.coin-top img{width:20px;height:20px}.price{color:#666;font-size:.92rem}.total{font-weight:700;margin:12px 0;font-size:1.05rem}.btn{width:100%;background:#ff0050;color:#fff;border:none;padding:12px;border-radius:10px;font-weight:700;cursor:pointer;font-size:1rem}.overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.32);z-index:50;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}.overlay.show{display:flex;animation:fadeIn .2s ease-in-out}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.panel{background:#fff;border-radius:14px;padding:18px;width:calc(100% - 40px);max-width:420px;text-align:center;box-shadow:0 18px 60px rgba(0,0,0,.25)}.success-icon{width:86px;height:86px;border-radius:50%;background:linear-gradient(135deg,#07b36e,#05a66a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px;margin:0 auto 12px;box-shadow:0 12px 40px rgba(6,166,107,.18)}.header-left{display:flex;align-items:center;width:100%;padding:10px 16px;box-sizing:border-box;gap:8px}.logo{height:32px}.tiktok-username{font-weight:600;font-size:1rem}.history-link{margin-left:auto;text-decoration:none;color:#007bff;font-size:.9rem}.payment-section{width:100%;margin-top:14px;text-align:center}.pay-btn{background:#007bff;color:#fff;border:none;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;font-size:1rem;transition:.2s}.pay-btn:hover{background:#005fcc}#orderSummaryOverlay .panel h3{margin-bottom:10px;text-align:center}.payment-option{border:1px solid #ddd;border-radius:8px;padding:8px;margin-top:8px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:.2s;text-align:center;justify-content:center}.payment-option:hover{border-color:#007bff;background:#f2f8ff}.payment-option span{font-weight:600}.cancel-btn{margin-top:12px;padding:10px 16px;border:none;background:#ccc;color:#111;border-radius:10px;cursor:pointer;font-weight:600}.cancel-btn:hover{background:#bbb}#loadingOverlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);z-index:1000}#loadingOverlay.show{display:flex}.dots-wrapper{display:flex;align-items:center;justify-content:center;gap:18px;animation:moveDots 1.2s infinite ease-in-out}.dot{width:16px;height:16px;border-radius:50%;animation:blink .8s infinite alternate}.dot.blue{background-color:#007aff;animation-delay:0s}.dot.red{background-color:#ff3b30;animation-delay:.4s}@keyframes blink{from{opacity:.4;transform:scale(.9)}to{opacity:1;transform:scale(1.2)}}@keyframes moveDots{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}.loading-spinner{border:4px solid #eee;border-top:4px solid #007bff;border-radius:50%;width:50px;height:50px;animation:spin 1s linear infinite;margin:20px auto}.pay-method{font-family:system-ui,sans-serif;color:#333}.label{display:block;font-weight:600;margin-bottom:4px}.card-line{display:flex;align-items:center;gap:8px;background:#fff;padding:8px 12px;border-radius:8px}.card-line{display:flex;align-items:center;gap:8px;background:#fff;padding:8px 12px;border-radius:8px;border:1px solid #ddd;cursor:pointer;transition:.2s}.card-line:hover{background:#f8faff;border-color:#007aff}.radio-dot{width:16px;height:16px;border-radius:50%;border:2px solid #bbb;margin-right:4px;position:relative}.card-line.active .radio-dot{border-color:#ff3b30}.card-line.active .radio-dot::after{content:"";position:absolute;top:3px;left:3px;width:8px;height:8px;background:#ff3b30;border-radius:50%}.card-icon{width:32px;height:auto}.card-number{font-size:15px;letter-spacing:1px}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@media(max-width:420px){.coins-grid{grid-template-columns:1fr 1fr}}</style>
+</head>
+<body>
+<header><h1 class=title>Get Coins</h1></header>
+<div class=header-left>
+<img src=daidien2.png alt=avatar class=logo style=width:20px;height:20px;border-radius:50%>
+<span class=tiktok-username>Jackw******</span>
+<a href=# class=history-link>View history</a>
+</div>
+<div class=stats aria-live=polite style=display:flex;flex-direction:column;align-items:flex-start;gap:1px;width:100%;height:1.5cm;margin-top:2px>
+<div style=display:flex;align-items:center;gap:6px>
+<div style=margin-left:26px>
+<div style=font-weight:700;font-size:1.1rem>
+<span id=hh>Recharge</span>
+</div>
+<div style=font-weight:400;font-size:.9rem;display:flex;align-items:center;gap:4px>
+<img src=wallet.png alt="coin icon" width=18 height=18>
+<span id=totalCoins>$3,000,000.00</span>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id=totalUsd style=visibility:hidden;height:2px> </div>
+
+<div class=input-section style=height:.55cm>
+<input id=tiktokId placeholder="">
+</div>
+<p style=text-align:left;margin-top:10px;margin-left:4px;font-size:.95rem>
+<span style=color:#000;font-weight:600>Top up :</span>
+<span style=color:#ff0050;font-weight:600>Save around 25% with lower third-party service fees.</span>
+</p>
+<div class=coins-grid id=coinGrid></div>
+<div class=coins-grid id=coinGrid></div>
+<div class=coins-grid id=coinGrid style=margin-bottom:0></div>
+<div style="text-align:left;margin:6px 0 2px 4px;line-height:1.3;padding-left:.5cm">
+<span style=color:#ff0050;font-weight:700>5%</span>
+<span style=color:#000;font-weight:500>Recharge to unlock 5% cashback up to $250 on your next Coin purchase</span><br>
+<span style=color:#666;font-size:.9rem>Default invite code applied. Change code</span>
+</div>
+<div style=display:flex;align-items:center;flex-wrap:wrap;gap:6px;text-align:left;margin-top:2px;padding-left:.5cm;width:100%>
+<span style=font-weight:500;color:#000;font-size:.9rem>Payment Method:</span>
+<img src=visa.png alt=Visa style=width:22px;height:auto>
+<img src=mastercard.png alt=MasterCard style=width:22px;height:auto>
+<img src=discover.png alt=Discover style=width:22px;height:auto>
+<img src=diners.png alt=Diners style=width:22px;height:auto>
+<img src=card_american_express.png alt="American Express" style=width:22px;height:auto>
+<img src=BankTransfer_facae.png alt="Bank Transfer" style=width:22px;height:auto>
+</div>
+<div class=total>Total: $<span id=total>0.00</span></div>
+<div class=payment-section>
+<button id=proceedBtn class=pay-btn style="background-color:#e60000;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer">
+Recharge
+</button>
+</div>
+<div id=orderSummaryOverlay class=overlay aria-hidden=true>
+<div class=panel style=text-align:left>
+<h3>Order Summary</h3>
+<div style="border:1px solid #ddd;border-radius:12px;padding:14px;margin-top:10px;background:#fafafa">
+<div style=display:flex;justify-content:space-between;margin-bottom:8px>
+<span>Selected Package:</span>
+<strong id=summaryPackage>-</strong>
+</div>
+<div style=display:flex;justify-content:space-between;margin-bottom:8px>
+<span>Service Fee:</span>
+<strong>$0.00</strong>
+</div>
+<div style=display:flex;justify-content:space-between;margin-bottom:8px>
+<span>Sent to user:</span>
+<strong id=summaryUser>-</strong>
+</div>
+<hr style="margin:10px 0">
+<div style=display:flex;justify-content:space-between;font-weight:700>
+<span>Total:</span>
+<span id=summaryTotal>$0.00</span>
+</div>
+</div>
+<div style=margin-top:20px;text-align:center>
+<div class=pay-method>
+<span class=label>Pay method</span>
+<div class="card-line selectable" data-method=visa>
+<div class=radio-dot></div>
+<img src=https://cdn-icons-png.flaticon.com/512/349/349230.png alt=Visa class=card-icon>
+<span class=card-number>Visa •••• •••• •••• 5674</span>
+</div>
+<div class="card-line selectable" data-method=mastercard>
+<div class=radio-dot></div>
+<img src=mastercard.png alt=Mastercard class=card-icon>
+<span class=card-number>Mastercard •••• •••• •••• 3451</span>
+</div>
+<div class="card-line selectable" data-method=paypal>
+<div class=radio-dot></div>
+<img src=paypal.png alt=PayPal class=card-icon>
+<span class=card-number>PayPal •••••••••@gmail.com</span>
+</div>
+</div>
+<div class=payment-option data-method=Apple style="background-color:#fe2c55;color:#fff;padding:10px 14px;border-radius:8px;text-align:center;font-weight:600;cursor:pointer">
+<span>Recharge</span>
+</div>
+</div>
+<button id=cancelSummary class=cancel-btn style=margin-top:14px;width:100%>Back</button>
+</div>
+</div>
+<div id=loadingOverlay class=overlay aria-hidden=true>
+<div class=dots-wrapper>
+<div class="dot blue"></div>
+<div class="dot red"></div>
+</div>
+</div>
+<div id=successOverlay class=overlay aria-hidden=true>
+<div class=panel>
+<div class=success-icon>✓</div>
+<div style=font-weight:800;font-size:18px;margin-bottom:8px>Payment Success</div>
+<div id=successText style=color:#444;margin-bottom:12px></div>
+<button id=backBtn class=btn style=background:#007bff>Back to Home</button>
+</div>
+</div>
+<script>const packages=[{amount:70},{amount:350},{amount:1e3},{amount:1e4},{amount:1e5},{amount:5e5},{amount:1e6}],baseCoins=30,baseUSD=.31,unitPrice=.31/30,coinGrid=document.getElementById("coinGrid"),totalEl=document.getElementById("total"),totalCoinsEl=document.getElementById("totalCoins");let totalBalance=3e6,selectedPackage=null;function usdFormat(e){return e.toFixed(2)}function updateTotalsUI(){totalCoinsEl.textContent=`$${totalBalance.toLocaleString(void 0,{minimumFractionDigits:2})}`}function renderPackages(){packages.forEach((e=>{const t=+(unitPrice*e.amount).toFixed(2),c=document.createElement("div");c.className="coin-card",c.innerHTML=`\n      <div class="coin-top"><img src="coin.png" alt=""> ${e.amount}</div>\n      <div class="price">$${usdFormat(t)}</div>\n    `,c.onclick=()=>{document.querySelectorAll(".coin-card").forEach((e=>e.classList.remove("active"))),c.classList.add("active"),selectedPackage={amount:e.amount,price:t},totalEl.textContent=usdFormat(t)},coinGrid.appendChild(c)}));const e=document.createElement("div");e.className="coin-card",e.innerHTML='\n    <div class="coin-top"><img src="coin.png" alt=""> Custom</div>\n    <div class="price">Enter amount</div>\n  ',e.onclick=()=>{const t=parseInt(prompt("Enter your desired number of coins:"),10);if(!t||t<=0)return;const c=+(t*unitPrice).toFixed(2);document.querySelectorAll(".coin-card").forEach((e=>e.classList.remove("active"))),e.classList.add("active"),e.innerHTML=`\n      <div class="coin-top"><img src="coin.png" alt=""> ${t.toLocaleString()}</div>\n      <div class="price">$${usdFormat(c)}</div>\n    `,selectedPackage={amount:t,price:c},totalEl.textContent=usdFormat(c)},coinGrid.appendChild(e)}updateTotalsUI(),renderPackages();const proceedBtn=document.getElementById("proceedBtn"),orderSummaryOverlay=document.getElementById("orderSummaryOverlay"),cancelSummary=document.getElementById("cancelSummary"),paymentChoices=orderSummaryOverlay.querySelectorAll(".payment-option"),successOverlay=document.getElementById("successOverlay"),successText=document.getElementById("successText"),backBtn=document.getElementById("backBtn");proceedBtn.onclick=()=>{const e=document.getElementById("tiktokId");selectedPackage?e.value.trim()?(document.getElementById("summaryPackage").textContent=`${selectedPackage.amount} Coins`,document.getElementById("summaryTotal").textContent=`$${usdFormat(selectedPackage.price)}`,document.getElementById("summaryUser").textContent=e.value.trim(),orderSummaryOverlay.classList.add("show")):alert("Please enter your TikTok username first."):alert("Please select a coin package first.")},cancelSummary.onclick=()=>{orderSummaryOverlay.classList.remove("show")},paymentChoices.forEach((e=>{e.onclick=()=>{e.getAttribute("data-method");orderSummaryOverlay.classList.remove("show");const t=document.getElementById("loadingOverlay");t.classList.add("show"),setTimeout((()=>{t.classList.remove("show"),totalBalance-=selectedPackage.price,totalBalance<0&&(totalBalance=0),updateTotalsUI(),successText.innerHTML="\n        You recharge Coins successfully.<br>\n        This operation has been completed and will be processed within 24 hours!\n      ",successOverlay.classList.add("show")}),2e3)}}));const cardLines=document.querySelectorAll(".card-line.selectable");let selectedMethod=null;cardLines.forEach((e=>{e.onclick=()=>{cardLines.forEach((e=>e.classList.remove("active"))),e.classList.add("active"),selectedMethod=e.getAttribute("data-method")}})),backBtn.onclick=()=>{successOverlay.classList.remove("show"),document.getElementById("tiktokId").value="",totalEl.textContent="0.00",document.querySelectorAll(".coin-card").forEach((e=>e.classList.remove("active"))),selectedPackage=null}</script>
+</body>
+</html>
